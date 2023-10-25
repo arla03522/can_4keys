@@ -8,7 +8,7 @@
 /* Includes ------------------------------------------------------------------*/
 /* ---------------------------------------------------------------------------*/
 
-#include "Buttons.h"
+
 #include "J1939.h"
 
 
@@ -17,7 +17,7 @@
 /* Defines -------------------------------------------------------------------*/
 /* ---------------------------------------------------------------------------*/
 
-#define J1939_ADDRESS				( 187 )					// Source Address
+#define J1939_ADDRESS				( 256 )					// Source Address
 
 #define PROPB_00_PF					( 255 )					// [PDU Format] SAE J1939 PropB = Proprietary B
 #define PROPB_00_PS					( 0 )					// [PDU Specific] SAE J1939 PropB_00 = Proprietary B, 0 entry
@@ -28,7 +28,7 @@
 #define AUXIO2_PRIO					( 6UL )					// Message Priority ( available values 0 .. 7, default priority is 6 )
 #define AUXIO2_SA					( 3UL )					// Transmitter J1939 Source Address
 
-#if ( KEYCAN_J1939_ADDRESS > 255 )
+#if ( J1939_ADDRESS > 255 )
 #error Incorrect CAN J1939 Source Address
 #endif
 #if ( ( ( PROPB_00_PF << 8 ) + PROPB_00_PS ) > 524287 )
@@ -185,4 +185,4 @@ void DisableLEDs( void );
 /* Private Macros ------------------------------------------------------------*/
 /* ---------------------------------------------------------------------------*/
 
-#endif /* USERCODE_DATAEXCHANGE_H_ */
+

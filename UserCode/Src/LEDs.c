@@ -14,7 +14,6 @@
 /* ---------------------------------------------------------------------------*/
 
 extern SPI_HandleTypeDef hspi1;
-extern TIM_HandleTypeDef htim1;
 
 
 
