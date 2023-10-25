@@ -22,6 +22,11 @@ extern TIM_HandleTypeDef htim1;
 /* Private define ------------------------------------------------------------*/
 /* ---------------------------------------------------------------------------*/
 
+#define SPI_DATA_BYTES			( 2U )
+#define SPI_TX_TIMEOUT			( 1000U )
+
+
+
 /* ---------------------------------------------------------------------------*/
 /* Private typedef -----------------------------------------------------------*/
 /* ---------------------------------------------------------------------------*/
@@ -56,7 +61,7 @@ void LEDsHandler( void ) {
 	static uint32_t scan_index = 0;
 
 	HAL_StatusTypeDef status;
-	status = HAL_SPI_Transmit( &hspi1, (uint8_t*)&LEDs[scan_index], 1, 1000 );
+	status = HAL_SPI_Transmit( &hspi1, (uint8_t*)&LEDs[scan_index], SPI_DATA_BYTES, SPI_TX_TIMEOUT );
 
 	switch ( scan_index ) {
 
