@@ -66,7 +66,6 @@ void LEDsHandler( void ) {
 		HAL_GPIO_WritePin(OUT_K2_GPIO_Port, OUT_K2_Pin, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(OUT_K3_GPIO_Port, OUT_K3_Pin, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(OUT_K4_GPIO_Port, OUT_K4_Pin, GPIO_PIN_SET);
-		break;
 	} //case
 
 	case 1 :
@@ -75,7 +74,6 @@ void LEDsHandler( void ) {
 		HAL_GPIO_WritePin(OUT_K2_GPIO_Port, OUT_K2_Pin, GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(OUT_K3_GPIO_Port, OUT_K3_Pin, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(OUT_K4_GPIO_Port, OUT_K4_Pin, GPIO_PIN_SET);
-		break;
 	} //case
 
 	case 2 :
@@ -84,7 +82,6 @@ void LEDsHandler( void ) {
 		HAL_GPIO_WritePin(OUT_K2_GPIO_Port, OUT_K2_Pin, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(OUT_K3_GPIO_Port, OUT_K3_Pin, GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(OUT_K4_GPIO_Port, OUT_K4_Pin, GPIO_PIN_SET);
-		break;
 	} //case
 
 	case 3 :
@@ -93,7 +90,6 @@ void LEDsHandler( void ) {
 		HAL_GPIO_WritePin(OUT_K2_GPIO_Port, OUT_K2_Pin, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(OUT_K3_GPIO_Port, OUT_K3_Pin, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(OUT_K4_GPIO_Port, OUT_K4_Pin, GPIO_PIN_RESET);
-		break;
 	} //case
 
 	default :
@@ -107,7 +103,7 @@ void LEDsHandler( void ) {
 	_ENABLE_LATCH;
 	_DISABLE_LATCH;
 
-	if ( ++scan_index >= 4 )
+	if ( ++scan_index > 4 )
 	{
 		scan_index = 0;
 	} //if
